@@ -3,3 +3,4 @@ gunicorn
 whitenoise
 stripe
 psycopg2-binary
+dj-database-url
