@@ -1,0 +1,1 @@
+# Placeholder manage.py for NextUpGaming project
