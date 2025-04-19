@@ -1,6 +1,13 @@
 import dj_database_url
 import os
-
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
 raw_db_url = os.environ.get("DATABASE_URL")
 ROOT_URLCONF = 'nextupgaming.urls'
 WSGI_APPLICATION = 'nextupgaming.wsgi.application'
