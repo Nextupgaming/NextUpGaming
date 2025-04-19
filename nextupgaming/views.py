@@ -14,6 +14,16 @@ def register(request):
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
+
+@login_required
+def profile_view(request):
+    return render(request, 'profile.html', {
+        'user': request.user,
+        'profile': request.user.profile,  # linked via OneToOneField
+    })
+
 def signup_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
