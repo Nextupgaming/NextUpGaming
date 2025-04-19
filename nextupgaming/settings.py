@@ -34,9 +34,9 @@ MIDDLEWARE = [
 TEMPLATES = [
     {
         ...
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'templates']',
         ...
-        'APP_DIRS': True,
+        'APP_DIRS': True',
         ...
     },
 ]
