@@ -27,7 +27,7 @@ class Order(models.Model):
 
 from django.db import models
 from django.contrib.auth.models import User
-from .item import Item  # Assuming Item is defined in models or split into item.py
+
 
 class CartItem(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
