@@ -6,6 +6,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 WSGI_APPLICATION = 'nextupgaming.wsgi.application'
 
+ROOT_URLCONF = 'nextupgaming.urls'
+
 # TEMPLATES
 TEMPLATES = [
     {
