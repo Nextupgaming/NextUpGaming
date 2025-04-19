@@ -1,8 +1,12 @@
-from django.urls import path
-from . import views
+from django.contrib import admin
+from django.urls import path, include
+from shop.views import shop_home
 
 urlpatterns = [
-    path('', views.shop_home, name='shop_home'),
-    path('item/<int:item_id>/', views.item_detail, name='item_detail'),
-    path('orders/', views.order_history, name='order_history'),
+    path('admin/', admin.site.urls),
+    path('', shop_home, name='shop_home'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('users.urls')),
+    path('shop/', include('shop.urls')),
+    path('tournaments/', include('tournaments.urls')),
 ]
