@@ -4,6 +4,8 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+WSGI_APPLICATION = 'nextupgaming.wsgi.application'
+
 # TEMPLATES
 TEMPLATES = [
     {
