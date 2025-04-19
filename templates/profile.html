@@ -1,4 +1,16 @@
-<h2>{{ user.username }}'s Profile</h2>
-<p><strong>Gamertag:</strong> {{ profile.gamertag }}</p>
-<p><strong>Platform:</strong> {{ profile.platform }}</p>
-<p><strong>Age:</strong> {{ profile.age }} years old</p>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-md mx-auto bg-white p-8 rounded shadow">
+    <h2 class="text-xl font-bold mb-4">{{ user.username }}'s Profile</h2>
+    <p><strong>Gamertag:</strong> {{ profile.gamertag }}</p>
+    <p><strong>Platform:</strong> {{ profile.platform }}</p>
+    <p><strong>Age:</strong> {{ profile.age }}</p>
+  </div>
+</body>
+</html>
