@@ -40,4 +40,9 @@ DATABASES = {
         conn_max_age=600,
         ssl_require=True
     )
+
+    LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
+
+TEMPLATES[0]['DIRS'] = [BASE_DIR / 'nextupgaming' / 'templates']
 }
