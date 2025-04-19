@@ -21,8 +21,10 @@ urlpatterns = [
 
 from django.contrib import admin
 from django.urls import path, include
+from nextupgaming.views import signup_view  # 👈 ADD THIS
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')),    # Login, logout, password reset
+    path('accounts/signup/', signup_view, name='signup'),  # 👈 ADD THIS
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
