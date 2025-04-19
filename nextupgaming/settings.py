@@ -5,7 +5,7 @@ import os
 
 import os
 
-   TEMPLATES = [
+TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR / 'nextupgaming' / 'templates'],
