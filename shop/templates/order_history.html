@@ -1,9 +1,9 @@
-{% extends "base.html" %}
-{% block content %}
-<h1>Order History</h1>
+
+<h2>Your Orders</h2>
 <ul>
-    {% for order in orders %}
-    <li>{{ order.quantity }} x {{ order.item.name }} - ${{ order.item.price }} each (Ordered on {{ order.created_at }})</li>
-    {% endfor %}
+  {% for order in orders %}
+    <li>Order #{{ order.id }} - {{ order.status }}</li>
+  {% empty %}
+    <li>No orders found.</li>
+  {% endfor %}
 </ul>
-{% endblock %}
