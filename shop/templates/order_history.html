@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Order History</h1>
+<ul>
+    {% for order in orders %}
+    <li>{{ order.quantity }} x {{ order.item.name }} - ${{ order.item.price }} each (Ordered on {{ order.created_at }})</li>
+    {% endfor %}
+</ul>
+{% endblock %}
