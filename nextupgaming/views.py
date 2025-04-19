@@ -21,7 +21,7 @@ from django.shortcuts import render
 def profile_view(request):
     return render(request, 'profile.html', {
         'user': request.user,
-        'profile': request.user.profile,  # linked via OneToOneField
+       request.user.userprofile   # linked via OneToOneField
     })
 
 def signup_view(request):
