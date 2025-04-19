@@ -1,5 +1,14 @@
 import dj_database_url
 import os
+
+TEMPLATES = [
+    {
+        ...
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        ...
+    },
+]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
