@@ -1,7 +1,7 @@
 
 {% extends "base.html" %}
 {% block content %}
-<h2>Thank you for your purchase!</h2>
-<p>You have successfully purchased {{ item.name }}.</p>
+<h2>Restricted</h2>
+<p>This item is age-restricted. You must be 18 or older to purchase it.</p>
 <a href="{% url 'shop' %}">Back to Shop</a>
 {% endblock %}

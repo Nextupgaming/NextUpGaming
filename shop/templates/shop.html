@@ -1,0 +1,16 @@
+
+{% extends "base.html" %}
+{% block content %}
+<h2>Shop</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {% for item in items %}
+    <div class="border rounded-lg p-4 shadow">
+        <h3 class="text-lg font-bold">{{ item.name }}</h3>
+        <img src="{{ item.image_url }}" alt="{{ item.name }}" class="w-full h-40 object-cover">
+        <p>{{ item.description }}</p>
+        <p><strong>{{ item.price_in_coins }} Coins</strong></p>
+        <a href="{% url 'purchase_item' item.id %}" class="bg-blue-500 text-white px-4 py-2 rounded mt-2 inline-block">Buy</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
