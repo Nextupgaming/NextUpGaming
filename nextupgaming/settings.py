@@ -2,6 +2,7 @@ import dj_database_url
 import os
 
 raw_db_url = os.environ.get("DATABASE_URL")
+ROOT_URLCONF = 'nextupgaming.urls'
 WSGI_APPLICATION = 'nextupgaming.wsgi.application'
 if isinstance(raw_db_url, bytes):  # Decode if needed
     raw_db_url = raw_db_url.decode()
