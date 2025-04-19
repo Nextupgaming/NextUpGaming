@@ -35,7 +35,10 @@ WSGI_APPLICATION = 'nextupgaming.wsgi.application'
 if isinstance(raw_db_url, bytes):  # Decode if needed
     raw_db_url = raw_db_url.decode()
 
-    DATABASES = {
+import dj_database_url
+import os
+
+DATABASES = {
     'default': dj_database_url.parse(
         os.environ.get("DATABASE_URL", ""),
         conn_max_age=600,
