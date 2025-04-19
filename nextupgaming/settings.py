@@ -31,15 +31,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-TEMPLATES = [
-    {
-        ...
-        'DIRS': [BASE_DIR / 'templates']',
-        ...
-        'APP_DIRS': True',
-        ...
-    },
-]
+
 
 ROOT_URLCONF = 'nextupgaming.urls'
 
