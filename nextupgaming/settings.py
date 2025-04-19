@@ -4,6 +4,16 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',  # ✅ THIS ONE
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    # your apps here...
+]
+
 WSGI_APPLICATION = 'nextupgaming.wsgi.application'
 
 ROOT_URLCONF = 'nextupgaming.urls'
