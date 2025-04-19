@@ -11,6 +11,7 @@ def home(request):
     return HttpResponse("✅ NextUpGaming is LIVE!")
 
 urlpatterns = [
+    path('accounts/signup/', signup_view, name='signup'),
     path('', home, name='home'),
     path('admin/', admin.site.urls),
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
