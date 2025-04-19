@@ -1,30 +1,26 @@
-
 from django.shortcuts import render, redirect
+from .models import Item, Order
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login
-from .forms import SignUpForm
-from .models import UserProfile
-
-def signup_view(request):
-    if request.method == 'POST':
-        form = SignUpForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            UserProfile.objects.create(
-                user=user,
-                gamertag=form.cleaned_data['gamertag'],
-                platform=form.cleaned_data['platform'],
-                date_of_birth=form.cleaned_data['date_of_birth']
-            )
-            login(request, user)
-            return redirect('profile')
-    else:
-        form = SignUpForm()
-    return render(request, 'registration/signup.html', {'form': form})
+from .forms import PurchaseForm
 
 @login_required
-def profile_view(request):
-    return render(request, 'profile.html', {
-        'user': request.user,
-        'profile': request.user.userprofile
-    })
+def shop_home(request):
+    items = Item.objects.all()
+    return render(request, "shop/shop_home.html", {"items": items})
+
+@login_required
+def item_detail(request, item_id):
+    item = Item.objects.get(id=item_id)
+    if request.method == "POST":
+        form = PurchaseForm(request.POST)
+        if form.is_valid():
+            Order.objects.create(user=request.user, item=item, quantity=form.cleaned_data['quantity'])
+            return redirect("shop_home")
+    else:
+        form = PurchaseForm()
+    return render(request, "shop/item_detail.html", {"item": item, "form": form})
+
+@login_required
+def order_history(request):
+    orders = Order.objects.filter(user=request.user)
+    return render(request, "shop/order_history.html", {"orders": orders})
