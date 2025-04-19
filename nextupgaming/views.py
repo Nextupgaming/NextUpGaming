@@ -19,7 +19,7 @@ def signup_view(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            return redirect('login')  # or redirect to dashboard
+            return redirect('login')  # redirects to login after successful signup
     else:
         form = UserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
