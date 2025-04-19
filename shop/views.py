@@ -1,3 +1,8 @@
+from django.shortcuts import render
+
+def shop_home(request):
+    return render(request, 'shop/home.html')
+
 
 from django.shortcuts import render, get_object_or_404
 from .models import Item
