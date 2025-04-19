@@ -21,6 +21,7 @@ ROOT_URLCONF = 'nextupgaming.urls'
 # TEMPLATES
 TEMPLATES = [
     {
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR / 'nextupgaming' / 'templates'],
         'APP_DIRS': True,
